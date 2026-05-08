@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="testai/testai.vcxproj" Id="faf0b6c3-b27b-4bff-8cfc-a88e9c0e03b2" />
+</Solution>
