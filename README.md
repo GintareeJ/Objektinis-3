@@ -105,8 +105,7 @@ Programa leidžia:
 
 - Doxygen dokumentacija leidžia lengvai suprasti projekto struktūrą
 - Unit testai padeda užtikrinti kodo stabilumą
-- TDD metodika leidžia saugiau plėsti projektą
-- CMake leidžia paprastai kompiliuoti projektą skirtingose sistemose
+- Makefile leidžia paprastai kompiliuoti projektą skirtingose sistemose
 - Projektas pilnai paruoštas tolimesniam vystymui
 
 ---
