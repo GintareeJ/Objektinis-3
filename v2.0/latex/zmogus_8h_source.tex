@@ -1,0 +1,78 @@
+\doxysection{zmogus.\+h}
+\hypertarget{zmogus_8h_source}{}\label{zmogus_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ZMOGUS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ZMOGUS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Zmogus}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00010\ \ \ \ \ std::string\ vard;}
+\DoxyCodeLine{00011\ \ \ \ \ std::string\ pavard;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \textcolor{comment}{//default\ konstruktorius}}
+\DoxyCodeLine{00015\ \ \ \ \ Zmogus()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \textcolor{comment}{//konstruktorius}}
+\DoxyCodeLine{00017\ \ \ \ \ Zmogus(\textcolor{keyword}{const}\ std::string\&\ v,\ \textcolor{keyword}{const}\ std::string\&\ p)\ :\ vard(v),\ pavard(p)\ \{\}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//default\ destruktorius}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{virtual}\ \string~Zmogus()\ \{\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ vard.clear();}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ pavard.clear();}
+\DoxyCodeLine{00022\ \}}
+\DoxyCodeLine{00023\ \ \textcolor{comment}{//\ copy\ constructor}}
+\DoxyCodeLine{00024\ Zmogus(\textcolor{keyword}{const}\ Zmogus\&\ other)}
+\DoxyCodeLine{00025\ \ \ \ \ :\ vard(other.vard),}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ pavard(other.pavard)\ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ move\ constructor}}
+\DoxyCodeLine{00029\ Zmogus(Zmogus\&\&\ other)\ noexcept}
+\DoxyCodeLine{00030\ \ \ \ \ :\ vard(std::move(other.vard)),}
+\DoxyCodeLine{00031\ \ \ \ \ pavard(std::move(other.pavard))}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ other.vard.clear();}
+\DoxyCodeLine{00034\ \ \ \ \ other.pavard.clear();}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ copy\ assignment}}
+\DoxyCodeLine{00038\ Zmogus\&\ operator=(\textcolor{keyword}{const}\ Zmogus\&\ other)}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ vard\ =\ other.vard;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ pavard\ =\ other.pavard;}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ move\ assignment}}
+\DoxyCodeLine{00049\ Zmogus\&\ operator=(Zmogus\&\&\ other)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ vard\ =\ std::move(other.vard);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ pavard\ =\ std::move(other.pavard);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ other.vard.clear();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ other.pavard.clear();}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//padaro\ klase\ abstrakcia}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ abstract()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00064\ \textcolor{comment}{//getteriai}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ vardas()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ vard;\ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ pavarde()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pavard;\ \}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//setteriai}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ setVardas(\textcolor{keyword}{const}\ std::string\&\ v)\ \{\ vard\ =\ v;\ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ setPavarde(\textcolor{keyword}{const}\ std::string\&\ p)\ \{\ pavard\ =\ p;\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

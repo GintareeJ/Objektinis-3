@@ -1,0 +1,128 @@
+\doxysection{studentas.\+h}
+\hypertarget{studentas_8h_source}{}\label{studentas_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUDENTAS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUDENTAS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}zmogus.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }Studentas\ :\ \textcolor{keyword}{public}\ Zmogus\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ std::vector<int>\ paz;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{double}\ rez\_\ =\ 0.0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ rez2\_\ =\ 0.0;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \textcolor{comment}{//default\ konstruktorius}}
+\DoxyCodeLine{00017\ \ \ \ \ Studentas()\ \{\}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//konstruktorius}}
+\DoxyCodeLine{00019\ \ \ \ \ Studentas(\textcolor{keyword}{const}\ std::string\&\ v,\ \textcolor{keyword}{const}\ std::string\&\ p,\ \textcolor{keyword}{const}\ std::vector<int>\&\ pazymiai)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ :\ Zmogus(v,\ p),\ paz(pazymiai)\ \{\}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//destruktorius}}
+\DoxyCodeLine{00023\ \string~Studentas()\textcolor{keyword}{\ override\ }\{\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ vard.clear();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ pavard.clear();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ paz.clear();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ rez\_=0.0;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ rez2\_=0.0;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//copy\ k.}}
+\DoxyCodeLine{00031\ \ \ \ \ Studentas(\textcolor{keyword}{const}\ Studentas\&\ other)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ :\ Zmogus(other),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ paz(other.paz),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ rez\_(other.rez\_),}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ rez2\_(other.rez2\_)\ \{\}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//move\ k.}}
+\DoxyCodeLine{00037\ \ \ \ \ Studentas(Studentas\&\&\ other)\ noexcept}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ :\ Zmogus(std::move(other)),\ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ paz(std::move(other.paz)),}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ rez\_(other.rez\_),}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ rez2\_(other.rez2\_)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ other.rez\_\ =\ 0.0;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ other.rez2\_\ =\ 0.0;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//copy\ assigment\ k.}}
+\DoxyCodeLine{00046\ \ \ \ \ Studentas\&\ operator=(\textcolor{keyword}{const}\ Studentas\&\ other)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ Zmogus::operator=(other);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ paz\ =\ other.paz;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ rez\_\ =\ other.rez\_;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ rez2\_\ =\ other.rez2\_;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//move\ assigment\ k.}}
+\DoxyCodeLine{00056\ \ \ \ \ Studentas\&\ operator=(Studentas\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ Zmogus::operator=(std::move(other));}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ paz\ =\ std::move(other.paz);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ rez\_\ =\ other.rez\_;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ rez2\_\ =\ other.rez2\_;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ other.rez\_\ =\ 0.0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ other.rez2\_\ =\ 0.0;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//padaro\ studentas\ isvestine\ klase}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ abstract()\textcolor{keyword}{\ const\ override\ }\{\}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//getteriai}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\&\ pazymiai()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ paz;\ \}}
+\DoxyCodeLine{00071\ \ \ \ \ std::vector<int>\&\ pazymiaiRef()\ \{\ \textcolor{keywordflow}{return}\ paz;\ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{double}\ rez()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ rez\_;\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ rez2()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ rez2\_;\ \}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//setteriai}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ addPazymys(\textcolor{keywordtype}{int}\ p)\ \{\ paz.push\_back(p);\ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ clearPazymiai()\ \{\ paz.clear();\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ setPazymiai(\textcolor{keyword}{const}\ std::vector<int>\&\ p)\ \{\ paz\ =\ p;\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ setRez(\textcolor{keywordtype}{double}\ r)\ \{\ rez\_\ =\ r;\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ setRez2(\textcolor{keywordtype}{double}\ r)\ \{\ rez2\_\ =\ r;\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ Studentas\&\ s)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ os\ <<\ std::left\ <<\ std::setw(15)\ <<\ s.vard\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ <<\ std::left\ <<\ std::setw(15)\ <<\ s.pavard;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ p\ :\ s.paz)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ os\ <<\ p\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (s.rez\_\ >\ 0)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ os\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ \textcolor{stringliteral}{"{}\ |\ Vid:\ "{}}\ <<\ s.rez\_;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (s.rez2\_\ >\ 0)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ os\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ \textcolor{stringliteral}{"{}\ |\ Med:\ "{}}\ <<\ s.rez2\_;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{friend}\ std::istream\&\ operator>>(std::istream\&\ is,\ Studentas\&\ s)}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ std::string\ v,\ p;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ is\ >>\ v\ >>\ p;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ s.setVardas(v);}
+\DoxyCodeLine{00106\ \ \ \ \ s.setPavarde(p);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ paz;}
+\DoxyCodeLine{00109\ \ \ \ \ s.clearPazymiai();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{while}\ (is\ >>\ paz)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ s.addPazymys(paz);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is.peek()\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00119\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

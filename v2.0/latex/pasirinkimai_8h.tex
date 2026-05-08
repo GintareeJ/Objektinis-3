@@ -1,0 +1,418 @@
+\doxysection{pasirinkimai.\+h File Reference}
+\hypertarget{pasirinkimai_8h}{}\label{pasirinkimai_8h}\index{pasirinkimai.h@{pasirinkimai.h}}
+
+
+Programos funkcijos ir pagalbiniai metodai.  
+
+
+{\ttfamily \+\#include "{}studentas.\+h"{}}\newline
+{\ttfamily \+\#include "{}rusiavimas.\+h"{}}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$list$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{pasirinkimai_8h_a8a9d606553fd627685da4bc7a17df1d6}{Skaiciavimai}} (std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int b)
+\begin{DoxyCompactList}\small\item\em Apskaiciuoja studentu galutinius balus. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{pasirinkimai_8h_ab4580ba1b9ee3e53aeb0625d8e4b08db}{Spausdinimas}} (std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int \&b)
+\begin{DoxyCompactList}\small\item\em Isveda studentu rezultatus. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{pasirinkimai_8h_ace342f272e1d1ac9519feacae3ed4636}{Vardas\+Pavarde}} (\doxymbox{\hyperlink{class_studentas}{Studentas}} \&s)
+\begin{DoxyCompactList}\small\item\em Nuskaito studento varda ir pavarde. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{pasirinkimai_8h_a5efe90f8936e4f117c131f8d0eb9f87c}{kinta}} ()
+\begin{DoxyCompactList}\small\item\em Pasirinkimas tarp vidurkio ir medianos. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{pasirinkimai_8h_a746c59fb5f7704e2befd84a352d6a456}{kintrus}} (int \&rus)
+\begin{DoxyCompactList}\small\item\em Pasirinkimas pagal ka rusiuoti. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{pasirinkimai_8h_abb7aaf60951ec962d8b5323def42a677}{kintr}} (int \&r)
+\begin{DoxyCompactList}\small\item\em Pasirinkimas didejanciai arba mazejanciai. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{pasirinkimai_8h_a9fada6745b5148a3aae8e6d21cb3d2d7}{Rand\+Paz}} (std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, \doxymbox{\hyperlink{class_studentas}{Studentas}} \&s, int \&kiek)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja atsitiktinius pazymius. \end{DoxyCompactList}\item 
+\Hypertarget{pasirinkimai_8h_aed1bfbef2c91999b4ec8393b28f068b4}\label{pasirinkimai_8h_aed1bfbef2c91999b4ec8393b28f068b4} 
+void {\bfseries PirmasP} (std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int \&b)
+\begin{DoxyCompactList}\small\item\em Pirmas meniu pasirinkimas. Duomenys vedami ranka. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{pasirinkimai_8h_a2186a5e1b3e63f3af3911cc7e6fe87a1}{AntrasP}} (std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int \&b)
+\begin{DoxyCompactList}\small\item\em Antras meniu pasirinkimas. Pazymiai generuojami. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{pasirinkimai_8h_a1c6c06f1650efd1bf3837d09950f7768}{TreciasP}} (std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, const std::\+vector$<$ std::\+string $>$ \&pavardes, const std::\+vector$<$ std::\+string $>$ \&vardai, int \&b)
+\begin{DoxyCompactList}\small\item\em Trecias meniu pasirinkimas. Generuojami studentai ir pazymiai. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{pasirinkimai_8h_a4c52ee2f72b94abda2031609ef9da3ef}{KetvirtasP}} (std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, const std::\+string \&CVfd, const std::\+string \&CVfr, double \&suma2, double \&suma3, double \&suma4, double \&suma5, double \&suma6, int \&spausd, bool \&skaityta\+Is\+Failo, int \&b)
+\begin{DoxyCompactList}\small\item\em Ketvirtas meniu pasirinkimas. Duomenys skaitomi is failo. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{pasirinkimai_8h_a8ed3fd39a64d085a350b8e2e5a41f6b6}{Generuoti\+Studentu\+Faila}} (const std::\+string \&failo\+Pav, int studentu\+Kiekis, int nd\+Kiekis)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja studentu faila. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Konteineris$>$ }\\void \doxymbox{\hyperlink{pasirinkimai_8h_aebcbe2cc1a02be9c44fa619deac10a33}{Spausdinti\+IFaila}} (const std::\+string \&failo\+Pav, const Konteineris \&studentai, int b)
+\begin{DoxyCompactList}\small\item\em Isveda studentus i faila. \end{DoxyCompactList}\item 
+\Hypertarget{pasirinkimai_8h_a16137a86727f9d826b5326cf03081930}\label{pasirinkimai_8h_a16137a86727f9d826b5326cf03081930} 
+void {\bfseries PenktasP} ()
+\begin{DoxyCompactList}\small\item\em Penktas meniu pasirinkimas. Atlieka konteineriu testus. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Konteineris$>$ }\\void \doxymbox{\hyperlink{pasirinkimai_8h_a562e761ca26d97d44c8985ba124d88e1}{Skaiciavimai\+Bendras}} (Konteineris \&studentai, int b)
+\begin{DoxyCompactList}\small\item\em Apskaiciuoja galutinius balus bet kuriam konteineriui. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Konteineris$>$ }\\void \doxymbox{\hyperlink{pasirinkimai_8h_a116fead87e8d2452b12a2b9414088c46}{Nuskaityti\+Is\+Failo\+Bendras}} (Konteineris \&studentai, const std::\+string \&failo\+Pav)
+\begin{DoxyCompactList}\small\item\em Nuskaito studentus is failo. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Konteineris$>$ }\\void \doxymbox{\hyperlink{pasirinkimai_8h_af080b2612125078013b9381073b85e1b}{Padalinti\+Studentus\+Bendras1}} (const Konteineris \&studentai, Konteineris \&vargsiukai, Konteineris \&kietiakai, int b)
+\begin{DoxyCompactList}\small\item\em Padalina studentus pagal pirma strategija. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Konteineris$>$ }\\void \doxymbox{\hyperlink{pasirinkimai_8h_aec43a8146130a48c208a214e4e9b2229}{Padalinti\+Studentus\+Bendras2}} (Konteineris \&studentai, Konteineris \&vargsiukai, int b)
+\begin{DoxyCompactList}\small\item\em Padalina studentus pagal antra strategija. \end{DoxyCompactList}\item 
+\Hypertarget{pasirinkimai_8h_a2c9e237e3d56b15f11d5c37bbf4bdb9a}\label{pasirinkimai_8h_a2c9e237e3d56b15f11d5c37bbf4bdb9a} 
+template$<$$>$ void {\bfseries Padalinti\+Studentus\+Bendras2$<$ std::\+list$<$ Studentas $>$ $>$} (std::\+list$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, std::\+list$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargsiukai, int b)
+\begin{DoxyCompactList}\small\item\em Padalina studentus pagal antra (list) strategija. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Konteineris$>$ }\\void \doxymbox{\hyperlink{pasirinkimai_8h_ac611efd6c592539adb0dff766af24ca0}{Rusiuoti\+Bendras}} (Konteineris \&studentai, int b, int r, int rus)
+\begin{DoxyCompactList}\small\item\em Rusiuoja studentus. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{pasirinkimai_8h_a35c1f1dac47d163ecdbc3923ff8d0205}{Rusiuoti\+Bendras}} (std::\+list$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int b, int r, int rus)
+\begin{DoxyCompactList}\small\item\em Rusiuoja studentus (list). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Konteineris$>$ }\\void \doxymbox{\hyperlink{pasirinkimai_8h_af793411b588ca9900491b30afd6ff61a}{Padalinti\+Studentus\+Bendras3}} (Konteineris \&studentai, Konteineris \&vargsiukai, int b)
+\begin{DoxyCompactList}\small\item\em Padalina studentus pagal trecia strategija. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Konteineris$>$ }\\void \doxymbox{\hyperlink{pasirinkimai_8h_a9c6f0bdc7e0f156750106a399f0a8c11}{Testuoti\+Konteineri}} (const std::\+string \&konteinerio\+Pav, const std::\+string \&failas, int studentu\+Kiekis, int nd\+Kiekis, int b, int r, int rus, int strategija)
+\begin{DoxyCompactList}\small\item\em Testuoja konteinerio greiti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Programos funkcijos ir pagalbiniai metodai. 
+
+
+
+\label{pasirinkimai_8h_doc-func-members}
+\Hypertarget{pasirinkimai_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{pasirinkimai_8h_a2186a5e1b3e63f3af3911cc7e6fe87a1}\index{pasirinkimai.h@{pasirinkimai.h}!AntrasP@{AntrasP}}
+\index{AntrasP@{AntrasP}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{AntrasP()}{AntrasP()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a2186a5e1b3e63f3af3911cc7e6fe87a1} 
+void AntrasP (\begin{DoxyParamCaption}\item[{std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Antras meniu pasirinkimas. Pazymiai generuojami. 
+
+Antras meniu pasirinkimas.
+
+Antras meniu pasirinkimas. Pazymiai generuojami. \Hypertarget{pasirinkimai_8h_a8ed3fd39a64d085a350b8e2e5a41f6b6}\index{pasirinkimai.h@{pasirinkimai.h}!GeneruotiStudentuFaila@{GeneruotiStudentuFaila}}
+\index{GeneruotiStudentuFaila@{GeneruotiStudentuFaila}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{GeneruotiStudentuFaila()}{GeneruotiStudentuFaila()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a8ed3fd39a64d085a350b8e2e5a41f6b6} 
+void Generuoti\+Studentu\+Faila (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{failo\+Pav}{, }\item[{int}]{studentu\+Kiekis}{, }\item[{int}]{nd\+Kiekis}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja studentu faila. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+Pav} & failo vardas \\
+\hline
+{\em studentu\+Kiekis} & studentu kiekis \\
+\hline
+{\em nd\+Kiekis} & namu darbu kiekis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pasirinkimai_8h_a4c52ee2f72b94abda2031609ef9da3ef}\index{pasirinkimai.h@{pasirinkimai.h}!KetvirtasP@{KetvirtasP}}
+\index{KetvirtasP@{KetvirtasP}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{KetvirtasP()}{KetvirtasP()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a4c52ee2f72b94abda2031609ef9da3ef} 
+void KetvirtasP (\begin{DoxyParamCaption}\item[{std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{const std::\+string \&}]{CVfd}{, }\item[{const std::\+string \&}]{CVfr}{, }\item[{double \&}]{suma2}{, }\item[{double \&}]{suma3}{, }\item[{double \&}]{suma4}{, }\item[{double \&}]{suma5}{, }\item[{double \&}]{suma6}{, }\item[{int \&}]{spausd}{, }\item[{bool \&}]{skaityta\+Is\+Failo}{, }\item[{int \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Ketvirtas meniu pasirinkimas. Duomenys skaitomi is failo. 
+
+Ketvirtas meniu pasirinkimas. Skaitymas is failo.
+
+Ketvirtas meniu pasirinkimas. Duomenys skaitomi is failo. \Hypertarget{pasirinkimai_8h_a5efe90f8936e4f117c131f8d0eb9f87c}\index{pasirinkimai.h@{pasirinkimai.h}!kinta@{kinta}}
+\index{kinta@{kinta}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{kinta()}{kinta()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a5efe90f8936e4f117c131f8d0eb9f87c} 
+int kinta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pasirinkimas tarp vidurkio ir medianos. 
+
+Leidzia pasirinkti vidurki arba mediana.
+
+\begin{DoxyReturn}{Returns}
+pasirinkimas
+\end{DoxyReturn}
+Pasirinkimas tarp vidurkio ir medianos. \Hypertarget{pasirinkimai_8h_abb7aaf60951ec962d8b5323def42a677}\index{pasirinkimai.h@{pasirinkimai.h}!kintr@{kintr}}
+\index{kintr@{kintr}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{kintr()}{kintr()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_abb7aaf60951ec962d8b5323def42a677} 
+int kintr (\begin{DoxyParamCaption}\item[{int \&}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Pasirinkimas didejanciai arba mazejanciai. 
+
+Leidzia pasirinkti rusiavimo tvarka.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & pasirinkimas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pasirinkimas
+\end{DoxyReturn}
+Pasirinkimas didejanciai arba mazejanciai. \Hypertarget{pasirinkimai_8h_a746c59fb5f7704e2befd84a352d6a456}\index{pasirinkimai.h@{pasirinkimai.h}!kintrus@{kintrus}}
+\index{kintrus@{kintrus}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{kintrus()}{kintrus()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a746c59fb5f7704e2befd84a352d6a456} 
+int kintrus (\begin{DoxyParamCaption}\item[{int \&}]{rus}{}\end{DoxyParamCaption})}
+
+
+
+Pasirinkimas pagal ka rusiuoti. 
+
+Leidzia pasirinkti rusiavimo lauka.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rus} & pasirinkimas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pasirinkimas
+\end{DoxyReturn}
+Pasirinkimas pagal ka rusiuoti. \Hypertarget{pasirinkimai_8h_a116fead87e8d2452b12a2b9414088c46}\index{pasirinkimai.h@{pasirinkimai.h}!NuskaitytiIsFailoBendras@{NuskaitytiIsFailoBendras}}
+\index{NuskaitytiIsFailoBendras@{NuskaitytiIsFailoBendras}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{NuskaitytiIsFailoBendras()}{NuskaitytiIsFailoBendras()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a116fead87e8d2452b12a2b9414088c46} 
+template$<$typename Konteineris$>$ \\
+void Nuskaityti\+Is\+Failo\+Bendras (\begin{DoxyParamCaption}\item[{Konteineris \&}]{studentai}{, }\item[{const std::\+string \&}]{failo\+Pav}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaito studentus is failo. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Konteineris} & konteinerio tipas \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & studentu konteineris \\
+\hline
+{\em failo\+Pav} & failo vardas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pasirinkimai_8h_af080b2612125078013b9381073b85e1b}\index{pasirinkimai.h@{pasirinkimai.h}!PadalintiStudentusBendras1@{PadalintiStudentusBendras1}}
+\index{PadalintiStudentusBendras1@{PadalintiStudentusBendras1}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{PadalintiStudentusBendras1()}{PadalintiStudentusBendras1()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_af080b2612125078013b9381073b85e1b} 
+template$<$typename Konteineris$>$ \\
+void Padalinti\+Studentus\+Bendras1 (\begin{DoxyParamCaption}\item[{const Konteineris \&}]{studentai}{, }\item[{Konteineris \&}]{vargsiukai}{, }\item[{Konteineris \&}]{kietiakai}{, }\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Padalina studentus pagal pirma strategija. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Konteineris} & konteinerio tipas \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{pasirinkimai_8h_aec43a8146130a48c208a214e4e9b2229}\index{pasirinkimai.h@{pasirinkimai.h}!PadalintiStudentusBendras2@{PadalintiStudentusBendras2}}
+\index{PadalintiStudentusBendras2@{PadalintiStudentusBendras2}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{PadalintiStudentusBendras2()}{PadalintiStudentusBendras2()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_aec43a8146130a48c208a214e4e9b2229} 
+template$<$typename Konteineris$>$ \\
+void Padalinti\+Studentus\+Bendras2 (\begin{DoxyParamCaption}\item[{Konteineris \&}]{studentai}{, }\item[{Konteineris \&}]{vargsiukai}{, }\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Padalina studentus pagal antra strategija. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Konteineris} & konteinerio tipas \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{pasirinkimai_8h_af793411b588ca9900491b30afd6ff61a}\index{pasirinkimai.h@{pasirinkimai.h}!PadalintiStudentusBendras3@{PadalintiStudentusBendras3}}
+\index{PadalintiStudentusBendras3@{PadalintiStudentusBendras3}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{PadalintiStudentusBendras3()}{PadalintiStudentusBendras3()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_af793411b588ca9900491b30afd6ff61a} 
+template$<$typename Konteineris$>$ \\
+void Padalinti\+Studentus\+Bendras3 (\begin{DoxyParamCaption}\item[{Konteineris \&}]{studentai}{, }\item[{Konteineris \&}]{vargsiukai}{, }\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Padalina studentus pagal trecia strategija. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Konteineris} & konteinerio tipas \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{pasirinkimai_8h_a9fada6745b5148a3aae8e6d21cb3d2d7}\index{pasirinkimai.h@{pasirinkimai.h}!RandPaz@{RandPaz}}
+\index{RandPaz@{RandPaz}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{RandPaz()}{RandPaz()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a9fada6745b5148a3aae8e6d21cb3d2d7} 
+void Rand\+Paz (\begin{DoxyParamCaption}\item[{std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{\doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{s}{, }\item[{int \&}]{kiek}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja atsitiktinius pazymius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & studentu konteineris \\
+\hline
+{\em s} & studentas \\
+\hline
+{\em kiek} & pazymiu kiekis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pasirinkimai_8h_ac611efd6c592539adb0dff766af24ca0}\index{pasirinkimai.h@{pasirinkimai.h}!RusiuotiBendras@{RusiuotiBendras}}
+\index{RusiuotiBendras@{RusiuotiBendras}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{RusiuotiBendras()}{RusiuotiBendras()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_ac611efd6c592539adb0dff766af24ca0} 
+template$<$typename Konteineris$>$ \\
+void Rusiuoti\+Bendras (\begin{DoxyParamCaption}\item[{Konteineris \&}]{studentai}{, }\item[{int}]{b}{, }\item[{int}]{r}{, }\item[{int}]{rus}{}\end{DoxyParamCaption})}
+
+
+
+Rusiuoja studentus. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Konteineris} & konteinerio tipas \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{pasirinkimai_8h_a35c1f1dac47d163ecdbc3923ff8d0205}\index{pasirinkimai.h@{pasirinkimai.h}!RusiuotiBendras@{RusiuotiBendras}}
+\index{RusiuotiBendras@{RusiuotiBendras}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{RusiuotiBendras()}{RusiuotiBendras()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a35c1f1dac47d163ecdbc3923ff8d0205} 
+void Rusiuoti\+Bendras (\begin{DoxyParamCaption}\item[{std::\+list$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{b}{, }\item[{int}]{r}{, }\item[{int}]{rus}{}\end{DoxyParamCaption})}
+
+
+
+Rusiuoja studentus (list). 
+
+Rusiuoja list konteineri.
+
+Rusiuoja studentus (list). \Hypertarget{pasirinkimai_8h_a8a9d606553fd627685da4bc7a17df1d6}\index{pasirinkimai.h@{pasirinkimai.h}!Skaiciavimai@{Skaiciavimai}}
+\index{Skaiciavimai@{Skaiciavimai}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{Skaiciavimai()}{Skaiciavimai()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a8a9d606553fd627685da4bc7a17df1d6} 
+void Skaiciavimai (\begin{DoxyParamCaption}\item[{std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Apskaiciuoja studentu galutinius balus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & studentu konteineris \\
+\hline
+{\em b} & skaiciavimo budas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pasirinkimai_8h_a562e761ca26d97d44c8985ba124d88e1}\index{pasirinkimai.h@{pasirinkimai.h}!SkaiciavimaiBendras@{SkaiciavimaiBendras}}
+\index{SkaiciavimaiBendras@{SkaiciavimaiBendras}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{SkaiciavimaiBendras()}{SkaiciavimaiBendras()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a562e761ca26d97d44c8985ba124d88e1} 
+template$<$typename Konteineris$>$ \\
+void Skaiciavimai\+Bendras (\begin{DoxyParamCaption}\item[{Konteineris \&}]{studentai}{, }\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Apskaiciuoja galutinius balus bet kuriam konteineriui. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Konteineris} & konteinerio tipas \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & studentu konteineris \\
+\hline
+{\em b} & skaiciavimo budas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pasirinkimai_8h_ab4580ba1b9ee3e53aeb0625d8e4b08db}\index{pasirinkimai.h@{pasirinkimai.h}!Spausdinimas@{Spausdinimas}}
+\index{Spausdinimas@{Spausdinimas}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{Spausdinimas()}{Spausdinimas()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_ab4580ba1b9ee3e53aeb0625d8e4b08db} 
+void Spausdinimas (\begin{DoxyParamCaption}\item[{std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Isveda studentu rezultatus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & studentu konteineris \\
+\hline
+{\em b} & skaiciavimo budas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pasirinkimai_8h_aebcbe2cc1a02be9c44fa619deac10a33}\index{pasirinkimai.h@{pasirinkimai.h}!SpausdintiIFaila@{SpausdintiIFaila}}
+\index{SpausdintiIFaila@{SpausdintiIFaila}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{SpausdintiIFaila()}{SpausdintiIFaila()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_aebcbe2cc1a02be9c44fa619deac10a33} 
+template$<$typename Konteineris$>$ \\
+void Spausdinti\+IFaila (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{failo\+Pav}{, }\item[{const Konteineris \&}]{studentai}{, }\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Isveda studentus i faila. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Konteineris} & konteinerio tipas \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+Pav} & failo vardas \\
+\hline
+{\em studentai} & studentu konteineris \\
+\hline
+{\em b} & skaiciavimo budas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pasirinkimai_8h_a9c6f0bdc7e0f156750106a399f0a8c11}\index{pasirinkimai.h@{pasirinkimai.h}!TestuotiKonteineri@{TestuotiKonteineri}}
+\index{TestuotiKonteineri@{TestuotiKonteineri}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{TestuotiKonteineri()}{TestuotiKonteineri()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a9c6f0bdc7e0f156750106a399f0a8c11} 
+template$<$typename Konteineris$>$ \\
+void Testuoti\+Konteineri (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{konteinerio\+Pav}{, }\item[{const std::\+string \&}]{failas}{, }\item[{int}]{studentu\+Kiekis}{, }\item[{int}]{nd\+Kiekis}{, }\item[{int}]{b}{, }\item[{int}]{r}{, }\item[{int}]{rus}{, }\item[{int}]{strategija}{}\end{DoxyParamCaption})}
+
+
+
+Testuoja konteinerio greiti. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Konteineris} & konteinerio tipas \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{pasirinkimai_8h_a1c6c06f1650efd1bf3837d09950f7768}\index{pasirinkimai.h@{pasirinkimai.h}!TreciasP@{TreciasP}}
+\index{TreciasP@{TreciasP}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{TreciasP()}{TreciasP()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_a1c6c06f1650efd1bf3837d09950f7768} 
+void TreciasP (\begin{DoxyParamCaption}\item[{std::\+vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{const std::\+vector$<$ std::\+string $>$ \&}]{pavardes}{, }\item[{const std::\+vector$<$ std::\+string $>$ \&}]{vardai}{, }\item[{int \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Trecias meniu pasirinkimas. Generuojami studentai ir pazymiai. 
+
+Trecias meniu pasirinkimas.
+
+Trecias meniu pasirinkimas. Generuojami studentai ir pazymiai. \Hypertarget{pasirinkimai_8h_ace342f272e1d1ac9519feacae3ed4636}\index{pasirinkimai.h@{pasirinkimai.h}!VardasPavarde@{VardasPavarde}}
+\index{VardasPavarde@{VardasPavarde}!pasirinkimai.h@{pasirinkimai.h}}
+\doxysubsubsection{\texorpdfstring{VardasPavarde()}{VardasPavarde()}}
+{\footnotesize\ttfamily \label{pasirinkimai_8h_ace342f272e1d1ac9519feacae3ed4636} 
+bool Vardas\+Pavarde (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaito studento varda ir pavarde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & studentas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true jei ivestis pavyko 
+\end{DoxyReturn}
