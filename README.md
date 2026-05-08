@@ -35,7 +35,8 @@ Sugeneruoti dokumentacijos formatai:
 
 ### Dokumentacijos pavyzdžiai
 
-//prideti 
+![Dok](documentation1.png)
+![Dok](documentation2.png)
 ---
 
 ## Unit Testai
@@ -58,7 +59,7 @@ Testuojami komponentai:
 
 ### Testų rezultatai
 
-//ikelti
+![Testai](testai.png)
 
 ---
 
