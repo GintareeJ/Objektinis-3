@@ -242,6 +242,25 @@ public:
         size_ = newSize;
     } //assign funckija
 
+    void assign(T* first, T* last) {
+    size_t newSize = last - first;
+
+    if (newSize > capacity_) {
+        T* newData = new T[newSize];
+
+        delete[] data_;
+
+        data_ = newData;
+        capacity_ = newSize;
+    }
+
+    for (size_t i = 0; i < newSize; i++) {
+        data_[i] = first[i];
+    }
+
+    size_ = newSize;
+}
+
     void insert(size_t index, const T& value) {
         if (index > size_) {
             throw std::out_of_range("Index out of range");
@@ -282,6 +301,31 @@ public:
         }
         size_--;
     } //erase funckija
+
+T* erase(T* pos) {
+    size_t index = pos - data_;
+    erase(index);
+    return data_ + index;
+}
+
+T* erase(T* first, T* last) {
+    size_t indexFirst = first - data_;
+    size_t indexLast = last - data_;
+
+    if (indexFirst > size_ || indexLast > size_ || indexFirst > indexLast) {
+        throw std::out_of_range("Invalid erase range");
+    }
+
+    size_t count = indexLast - indexFirst;
+
+    for (size_t i = indexFirst; i + count < size_; i++) {
+        data_[i] = std::move(data_[i + count]);
+    }
+
+    size_ -= count;
+
+    return data_ + indexFirst;
+}
     
 void swap(Vector& other) {
 
@@ -360,4 +404,4 @@ void swap(Vector& other) {
         return data_ + size_;
     } //const end getteris
 };
-#endif VECTOR_H
+#endif
