@@ -7,8 +7,8 @@
 #include <random>
 #include <list>
 #include <deque>
-#include <vector>
 
+#include "vector.h"
 #include "pasirinkimai.h"
 #include "rusiavimas.h"
 #include "studentas.h"
@@ -20,7 +20,7 @@ using namespace std::chrono;
  * @param studentai studentu konteineris
  * @param b skaiciavimo budas
  */
-void Skaiciavimai(std::vector<Studentas>& studentai, int b)
+void Skaiciavimai(Vector<Studentas>& studentai, int b)
 {
     if (b == 0)
     {
@@ -60,7 +60,7 @@ void Skaiciavimai(std::vector<Studentas>& studentai, int b)
  * @param studentai studentu konteineris
  * @param b skaiciavimo budas
  */
-void Spausdinimas(std::vector<Studentas>& studentai, int& b)
+void Spausdinimas(Vector<Studentas>& studentai, int& b)
 {
     if (b == 0)
     {
@@ -131,7 +131,7 @@ bool VardasPavarde(Studentas& s)
 /**
  * @brief Sugeneruoja atsitiktinius pazymius.
  */
-void RandPaz(std::vector<Studentas>& studentai, Studentas& s, int& kiek)
+void RandPaz(Vector<Studentas>& studentai, Studentas& s, int& kiek)
 {
     if (kiek == 0) {
         cout << "Pazymiai bus generuojami automatiskai, iveskite pazymiu kieki (min 2): ";
@@ -236,7 +236,7 @@ int kintr(int& r)
  * @brief Pirmas meniu pasirinkimas.
  * Duomenys vedami ranka.
  */
-void PirmasP(std::vector<Studentas>& studentai, int& b)
+void PirmasP(Vector<Studentas>& studentai, int& b)
 {
     while (true) {
         Studentas s;
@@ -296,7 +296,7 @@ void PirmasP(std::vector<Studentas>& studentai, int& b)
 /**
  * @brief Antras meniu pasirinkimas.
  */
-void AntrasP(std::vector<Studentas>& studentai, int& b)
+void AntrasP(Vector<Studentas>& studentai, int& b)
 {
     int kiek = 0;
     while (true) {
@@ -312,7 +312,7 @@ void AntrasP(std::vector<Studentas>& studentai, int& b)
 /**
  * @brief Trecias meniu pasirinkimas.
  */
-void TreciasP(std::vector<Studentas>& studentai, const std::vector<std::string>& pavardes, const std::vector<std::string>& vardai, int& b)
+void TreciasP(Vector<Studentas>& studentai, const Vector<std::string>& pavardes, const Vector<std::string>& vardai, int& b)
 {
     int skiek;
     int kiek = 0;
@@ -357,7 +357,7 @@ void TreciasP(std::vector<Studentas>& studentai, const std::vector<std::string>&
  * @brief Ketvirtas meniu pasirinkimas.
  * Skaitymas is failo.
  */
-void KetvirtasP(std::vector<Studentas>& studentai, const std::string& CVfd, const std::string& CVfr, double& suma2, double& suma3, double& suma4, double& suma5, double& suma6, int& spausd, bool& skaitytaIsFailo, int& b)
+void KetvirtasP(Vector<Studentas>& studentai, const std::string& CVfd, const std::string& CVfr, double& suma2, double& suma3, double& suma4, double& suma5, double& suma6, int& spausd, bool& skaitytaIsFailo, int& b)
 {
     skaitytaIsFailo = true;
 
@@ -491,10 +491,13 @@ void PenktasP()
     b = kinta();
     
     cout << "\n100000 irasu\n";
-    TestuotiKonteineri<std::vector<Studentas>>("vector", "studentai100000.txt", 100000, ndKiekis, b, r, rus, 3);
+    TestuotiKonteineri<Vector<Studentas>>("vector", "studentai100000.txt", 100000, ndKiekis, b, r, rus, 3);
 
     cout << "\n1000000 irasu\n";
-    TestuotiKonteineri<std::vector<Studentas>>("vector", "studentai1000000.txt", 1000000, ndKiekis, b, r, rus, 3);
+    TestuotiKonteineri<Vector<Studentas>>("vector", "studentai1000000.txt", 1000000, ndKiekis, b, r, rus, 3);
+
+    cout << "\n10000000 irasu\n";
+    TestuotiKonteineri<Vector<Studentas>>("vector", "studentai10000000.txt", 10000000, ndKiekis, b, r, rus, 3);
 }
 
 /**
