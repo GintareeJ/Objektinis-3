@@ -14,6 +14,7 @@
 #include "studentas.h"
 #include "rusiavimas.h"
 #include "pasirinkimai.h"
+#include "vector.h"
 
 using std::cin;
 using std::string;
@@ -46,12 +47,19 @@ string pavardes[] = { "Kazlauskas", "Petrauskas", "Jankauskas", "Vaitkus", "Kazl
 string vardai[] = { "Jonas", "Petras", "Mantas", "Lukas", "Tomas", "Ieva", "Aiste", "Monika", "Greta", "Laura" };
 int pavN = sizeof(pavardes) / sizeof(pavardes[0]);
 int vardN = sizeof(vardai) / sizeof(vardai[0]);
-std::vector<std::string> pavardesVec(pavardes, pavardes + pavN);
-std::vector<std::string> vardaiVec(vardai, vardai + vardN);
+Vector<std::string> pavardesVec;
+for (int i = 0; i < pavN; i++) {
+    pavardesVec.push_back(pavardes[i]);
+}
 
-std::vector<Studentas> studentai;
-std::vector<Studentas> vargsiukai;
-std::vector<Studentas> kietiakai;
+Vector<std::string> vardaiVec;
+for (int i = 0; i < vardN; i++) {
+    vardaiVec.push_back(vardai[i]);
+}
+
+Vector<Studentas> studentai;
+Vector<Studentas> vargsiukai;
+Vector<Studentas> kietiakai;
 srand(time(nullptr)); //kad kiekviena karta butu generuojami skirtingi pazymiai
 
     auto start1 = high_resolution_clock::now(); 
@@ -102,7 +110,7 @@ srand(time(nullptr)); //kad kiekviena karta butu generuojami skirtingi pazymiai
         {
             try
             {
-                {TreciasP(studentai, pavardesVec, vardaiVec, b);}
+                TreciasP(studentai, pavardesVec, vardaiVec, b);
             }
             catch(const std::exception& e)
             {
