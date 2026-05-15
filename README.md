@@ -1,168 +1,246 @@
-# V2.0
+# V3.0
 
-## Programos atnaujinimas
+## Programos aprašymas
 
-v2.0 versija yra išplėsta ankstesnių versijų realizacija, kurioje pagrindinis dėmesys skirtas:
+v3.0 versijoje realizuotas nuosavas `Vector` konteineris, kuris naudojamas vietoje `std::vector`. 
 
-- projekto dokumentavimui naudojant Doxygen
-- Unit Testų realizacijai
-- projekto diegimo automatizavimui
-- tvarkingos ir pilnai paruoštos GitHub repozitorijos sukūrimui
+Programa leidžia:
 
-Ši versija ne tik išlaiko visą ankstesnių versijų funkcionalumą, bet ir paverčia projektą pilnai paruoštu tolimesniam vystymui, testavimui bei naudojimui kitose sistemose.
+- įvesti studentų duomenis rankiniu būdu
+- generuoti atsitiktinius pažymius
+- generuoti atsitiktinius studentus
+- nuskaityti studentų duomenis iš failo
+- apskaičiuoti galutinį balą:
+  - pagal vidurkį
+  - pagal medianą
+- rūšiuoti studentus
+- skirstyti studentus į grupes
+- atlikti konteinerių spartos analizę
+
+---
+
+## Nuosavas `Vector` konteineris
+
+Sukurtas nuosavas šabloninis `Vector<T>` konteineris, kuris atkartoja didžiąją dalį `std::vector` funkcionalumo.
+
+Realizuotos funkcijos:
+
+- konstruktoriai
+- destruktorius
+- copy/move assignment operatoriai
+- `push_back()`
+- `pop_back()`
+- `resize()`
+- `reserve()`
+- `assign()`
+- `insert()`
+- `erase()`
+- `clear()`
+- `swap()`
+- `front()`
+- `back()`
+- `at()`
+- iteratoriai:
+  - `begin()`
+  - `end()`
+- palyginimo operatoriai:
+  - `==`
+  - `!=`
+  - `<`
+  - `>`
+  - `<=`
+  - `>=`
+
+Nuosavas konteineris pilnai integruotas į pagrindinę programą vietoje `std::vector`.
+
+---
+---
+
+## `Vector` funkcijų pavyzdžiai
+
+### `push_back()`
+
+```cpp
+Vector<int> v;
+
+v.push_back(10);
+v.push_back(20);
+
+std::cout << v[0] << " " << v[1];
+
+Rezultatas: 10 20
+```
+### `resize()`
+
+```cpp
+Vector<int> v;
+
+v.push_back(1);
+v.push_back(2);
+
+v.resize(5);
+
+std::cout << v.size();
+Rezultatas: 5
+```
+### `reserve()`
+
+```cpp
+Vector<int> v;
+
+v.reserve(100);
+
+std::cout << v.capacity();
+Rezultatas: 100
+```
+### `operator==`
+
+```cpp
+Vector<int> a;
+Vector<int> b;
+
+a.push_back(1);
+b.push_back(1);
+
+if (a == b)
+{
+    std::cout << "Vienodi";
+}
+Rezultatas: Vienodi
+```
+### `erase()`
+
+```cpp
+Vector<int> v;
+
+v.push_back(1);
+v.push_back(2);
+v.push_back(3);
+
+v.erase(v.begin() + 1);
+
+for (auto x : v)
+{
+    std::cout << x << " ";
+}
+Rezultatas: 1 3
+```
+
+
+## Unit Testai
+
+Projektui realizuoti Google Tests testai, tikrinantys `Vector` konteinerio veikimą.
+
+Testuojamos funkcijos:
+
+- konstruktoriai
+- copy/move operacijos
+- `push_back()`
+- `pop_back()`
+- `resize()`
+- `reserve()`
+- `clear()`
+- `swap()`
+- `front()` / `back()`
+- palyginimo operatoriai
+- iteratoriai
+- `erase()`
+- `assign()`
+
+### Testų rezultatai
+
+![Images](images/testai.png)
 
 ---
 
 ## Doxygen dokumentacija
 
-Projektui sukurta pilna dokumentacija naudojant **Doxygen**.
+Projektui sugeneruota dokumentacija naudojant **Doxygen**.
 
 Dokumentacijoje aprašyti:
 
-- klasės
+- `Vector` konteineris
 - metodai
-- konstruktoriai
-- destruktoriai
 - operatoriai
-- paveldėjimo struktūra
-- failų priklausomybės
+- konstruktoriai
+- iteratoriai
+- programos funkcijos
 
-Sugeneruoti dokumentacijos formatai:
+### Dokumentacijos pavyzdys
 
-- HTML dokumentacija
-- LaTeX dokumentacija
-- PDF dokumentacija
+![Images](images/dokumentacija.png)
 
-### Dokumentacijos pavyzdžiai
-
-![Dok](documentation1.png)
-![Dok](documentation2.png)
 ---
 
-## Unit Testai
+## Spartos analizė
 
-v2.0 versijoje realizuoti Unit Testai naudojant C++ testavimo framework'ą - Google tests.
+Atlikta `std::vector` ir nuosavo `Vector` konteinerio spartos analizė.
 
-Testavimo metu tikrinamas korektiškas klasės `Studentas` veikimas.
+Buvo lyginama:
 
-Testuojami komponentai:
+- `push_back()` veikimo sparta
+- atminties perskirstymų skaičius
+- programos veikimo laikas naudojant skirtingus konteinerius
 
-- konstruktorius
-- copy konstruktorius
-- move konstruktorius
-- copy assignment operator
-- move assignment operator
-- destruktorius
-- įvesties operatorius
-- išvesties operatorius
-- objektų kopijavimas konteineriuose
+### `std::vector` rezultatai
 
-### Testų rezultatai
+![std::vector](images/stdVec1.png)
 
-![Testai](testai.png)
+![std::vector](images/stdVec2.png)
+
+### `Vector` rezultatai
+
+![Vector](images/Vec1.png)
+
+![Vector](images/Vec2.png)
+
+### Perskirstymų ir push_back veikimo spartos rezultatai
+
+![Vector](images/pushback.png)
+
+---
+
+## DLL panaudojimas
+
+Projektui sukurtas ir panaudotas DLL failas.
+
+Programa sėkmingai naudoja dinaminę biblioteką (`DLL.dll`) pagrindinės programos veikimo metu.
 
 ---
 
 ## Programos diegimas
 
-Projektui paruoštas **Makefile** diegimo failas.
+Projektui sukurtas `setup.exe` diegimo failas.
 
-### Projekto paleidimas
+Diegimo metu programa įrašoma į:
+
+```text
+C:\Program Files\VU\Vardenis-Pavardenis
+```
+## Naudojimosi instrukcija
+
+### Programos paleidimas naudojant `setup.exe`
+
+1. Paleiskite `setup.exe`dešiniu pelės mygtuku nuspaudus ant failo ir pasirinkus "Run as administrator"
+2. Pasirinkite diegimo vietą arba palikite numatytąją.
+3. Užbaikite diegimą
+4. Programą galima paleisti:
+- per Desktop shortcut
+- per Start Menu:
+`VU -> Vardenis-Pavardenis`
+
+## Programą galima paleisti ir su Makefile
+
+### Paleidimas
 
 - Atsidarykite savo OS terminalą
 - Jei naudojate Windows, rekomenduojama naudoti MSYS2 aplinką:
 - Atsisiųsti: https://www.msys2.org/
 - Paleisti „MSYS2 UCRT64“ terminalą
 - Įdiegti reikalingus įrankius: pacman -S mingw-w64-ucrt-x86_64-gcc make git
-- Įveskite šią eilutę: git clone https://github.com/GintareeJ/Objektinis-2
+- Įveskite šią eilutę: git clone https://github.com/GintareeJ/Objektinis-3
 - Patikrinkite, kuriame branch esate ir įveskite "git branch". Jei branch nėra main, įveskite "git checkout main".
-- Pereikite į projekto katalogą: cd Objektinis-1/v1.0
+- Pereikite į projekto katalogą: cd Objektinis-3/v3.0
 - Įrašykite "make run" norėdami paleisti programą
 - Jei norite ištrinti sukompiliuotą failą, įrašykite "make clean"
 ---
-
-## Programos funkcionalumas
-
-Programa leidžia:
-
-- nuskaityti studentų duomenis iš failo
-- įvesti duomenis rankiniu būdu
-- generuoti atsitiktinius studentus
-- apskaičiuoti galutinį balą:
-  - pagal vidurkį
-  - pagal medianą
-- rūšiuoti studentus
-- skirstyti studentus į grupes
-- naudoti skirtingus konteinerius:
-  - `vector`
-  - `list`
-  - `deque`
-- matuoti veikimo laikus
-
----
-
-## Išvados
-
-- Doxygen dokumentacija leidžia lengvai suprasti projekto struktūrą
-- Unit testai padeda užtikrinti kodo stabilumą
-- Makefile leidžia paprastai kompiliuoti projektą skirtingose sistemose
-- Projektas pilnai paruoštas tolimesniam vystymui
-
----
-
-# Ankstesnės versijos
-
-# V1.5
-
-#### Programos v1.5 versija:
-
-- realizuotas paveldėjimas
-- sukurta base klasė
-- base klasė padaryta abstrakčia
-- sukurta derived klasė
-- pakartoti Rule of Five testai
-- išlaikytas visas ankstesnis funkcionalumas
-  
-#### Išvados
-
-- abstrakti klasė leidžia geriau organizuoti programos architektūrą
-- paveldėjimas leidžia lengviau plėsti projektą
-- funkcionalumas išlieka stabilus
-
----
-
-# V1.2
-
-#### Programos v1.2 versija:
-
-- realizuota Rule of Five
-- perdengti įvesties ir išvesties operatoriai
-- realizuoti klasės testai
-- pagerintas atminties valdymas
-- įdiegtos move operacijos
-
-#### Išvados
-
-- move semantika sumažina nereikalingą kopijavimą
-- pagerintas programos efektyvumas
-- klasė tapo universalesnė
-
----
-
-# V1.1
-
-#### Programos v1.1 versija:
-
-- nuskaito studentų duomenis iš failo
-- apskaičiuoja galutinį balą
-- rūšiuoja studentus
-- skirsto studentus į grupes
-- leidžia naudoti `vector`, `list`, `deque`
-- matuoja veikimo laikus
-- atliktas struct ir class palyginimas
-
-#### Išvados
-
-- struct versija kai kuriais atvejais veikia greičiau
-- optimizavimo flagai pagerina veikimo greitį
-- sumažėja galutinio executable failo dydis
