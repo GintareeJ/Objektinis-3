@@ -221,10 +221,11 @@ C:\Program Files\VU\Vardenis-Pavardenis
 
 ### Programos paleidimas naudojant `setup.exe`
 
-1. Paleiskite `setup.exe`dešiniu pelės mygtuku nuspaudus ant failo ir pasirinkus "Run as administrator"
-2. Pasirinkite diegimo vietą arba palikite numatytąją.
-3. Užbaikite diegimą
-4. Programą galima paleisti:
+1. Paleiskite `setup.exe`
+2. Suteikite administratoriaus teises
+3. Pasirinkite diegimo vietą arba palikite numatytąją.
+4. Užbaikite diegimą
+5. Programą galima paleisti:
 - per Desktop shortcut
 - per Start Menu:
 `VU -> Vardenis-Pavardenis`
